@@ -20,7 +20,7 @@ function Navbar() {
   // console.log(user.user.email)
 
   const logout = () => {
-    localStorage.clear('user');
+    localStorage.removeItem('user');
     window.location.href = '/login'
   }
 
@@ -75,7 +75,7 @@ function Navbar() {
                     </Link>
                   </div> : ""}
 
-                  {user?.user?.email === "knupadhyay784@gmail.com" ? <div className="flow-root">
+                  {user?.user?.email === "akashathnure40@gmail.com" ? <div className="flow-root">
                     <Link to={'/dashboard'} className="-m-2 block p-2 font-medium text-gray-900" style={{ color: mode === 'dark' ? 'white' : '', }}>
                       admin
                     </Link>
@@ -164,8 +164,8 @@ function Navbar() {
                 </div>
 
                 <div className="hidden lg:ml-8 lg:flex">
-                  {user ? <span className="ml-3 block text-sm font-medium" style={{ color: 'white' }}>{user.user}</span>
-                    : "Akash"}
+                  {user ? <span className="ml-3 block text-sm font-medium" style={{ color: 'white' }}>{user?.user}</span>
+                    : <span className="ml-3 block text-sm font-medium" style={{ color: 'white' }}>Akash</span>}
                 </div>
                 <div className="flex lg:ml-6">
                   <button className='' onClick={toggleMode}>
